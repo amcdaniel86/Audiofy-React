@@ -30,3 +30,46 @@
     transform: rotate(360deg);
   }
 }
+
+/* example from class CSS
+ .list-of-projects-container{
+  float: left;
+  width: 40%;
+  margin: 20px;
+}
+
+
+.input{
+  width: 300px;
+  height: 40px;
+  border-radius: 3px;
+}
+
+span{
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 10px;
+  width: 300px;
+  height: 40px;
+  padding: 5px;
+}
+
+
+.pen-pic{
+  width: 30px;
+}
+
+.delete{
+  width: 250px;
+  background: lightskyblue;
+  border-radius: 3px;
+  color: white;
+  height: 80px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+
+a{
+  margin: 10px;
+} */
