@@ -123,11 +123,13 @@ class App extends Component {
 
             {/* SIGNUP ROUTE */}
             <Route path="/signup" render = {(props) => <Signup {...props} logTheUserIntoAppComponent = {this.logInTheUser} /> } />
+            {/* what is logTheUserIntoAppComponent =????? */}
 {/* should set the state in the app component to keep app state consistent for the user. */}
 
 
             {/* LOGIN ROUTE */}
             <Route path="/login" render = {(props) => <Login {...props} logTheUserIntoAppComponent = {this.logInTheUser} /> } />
+{/* what is logTheUserIntoAppComponent =????? */}
 
         </Switch>
 
@@ -144,4 +146,6 @@ export default App;
 
 // ROUTES IN REACT are if statements, remember that.
 
-// Be 100% certain that all components have user information in the same class, so it is never changed or altered while a user travels through my app. 
+// Be 100% certain that all components have user information in the same class, so it is never changed or altered while a user travels through my app.
+
+{/* what is logTheUserIntoAppComponent =????? */}
