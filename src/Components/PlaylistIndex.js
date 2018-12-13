@@ -76,10 +76,29 @@ class PlaylistIndex extends Component {
 
 
 
+    // render function runs once, when the component's state is equal to the default state from the top right under extends Component. if the default state is null, then function .map will not work. if the default state is [], an empty array, like mentioned earlier, then function .map will work. along with other functions, like .filter, .reduce etc. 
+
+
+
     render() {
+      // console.log('-=-=-=-=-=-=-=-=', this.state); a test
       return(
         <div>
+          {/* Now here, is where we have to show all the playlists on the page, this happens in the render function. Logic is above in functions, 1st half or so of component, and then in render is when what the visual will end up becoming depending on the rules of state and the above logic. */}
+          <h1>Playlist Index</h1>
 
+          <div className="list-of-playlists-container">
+            {this.showAllPlaylists()}
+          </div>
+          
+          <div className="add-new-component-container">
+            <NewPlaylist letTheIndexComponentKnowThatWeAddedAPlaylist = {this.fetchPlaylists} />
+            {/* we pass in this function in the PlaylistIndex Component, so after we add a new playlist in the NewPlaylist Component, the NewP Component, will be able to tell the PlaylistIndex Component to check for any new playlists that we're added since the last render of PlaylistIndex.*/}
+          </div>
+          
+          
+          
+          
         </div>
       )
     }
