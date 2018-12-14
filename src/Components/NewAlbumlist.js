@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 import Axios from 'axios';
-import AlbumlistIndex from './Components/AlbumlistIndex';
-import { Link } from 'react-router-dom';
+// import AlbumlistIndex from './AlbumlistIndex';
+// import Signup from '/Signup';
+// import { Link } from 'react-router-dom';
 
 
 class NewAlbumlist extends Component {

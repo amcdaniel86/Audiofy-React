@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 import Axios from 'axios';
-import PlaylistIndex from './Components/PlaylistIndex';
-import { Link } from 'react-router-dom';
+// import PlaylistIndex from './PlaylistIndex';
+// import { Link } from 'react-router-dom';
 
 
 class NewPlaylist extends Component {
@@ -62,7 +62,6 @@ render() {
           <input value={this.state.timeInput} id="timeInput" onChange={this.updateInput} />
 
           <button>Save</button>
-
 
         </form>
 

@@ -68,6 +68,8 @@ class AlbumlistIndex extends Component {
                 <h6>{eachAlbumlist.time}</h6>
                 <Link to = {'/albumlist/' + eachAlbumlist._id} >See Details </Link>
               
+            
+
               </div>
             )
         })

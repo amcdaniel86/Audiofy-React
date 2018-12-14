@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import Axios from 'axios';
-import UserService from '../services/UserService';
+import UserService from '../Services/UserService';
 import { Link } from 'react-router-dom';
 
 

@@ -131,6 +131,19 @@ class App extends Component {
             <Route path="/login" render = {(props) => <Login {...props} logTheUserIntoAppComponent = {this.logInTheUser} /> } />
 {/* what is logTheUserIntoAppComponent =????? */}
 
+
+{/* // BELOW - TRYING TO FIX THE REACT ERROR */}
+            {/* NEW PLAYLIST ROUTE */}
+            <Route path="/playlist-new" render={(props) =>         <newPlaylist {...props} currentUser =        {this.state.loggedInUser} /> } />
+            {/* above says, at this url, render props from the      NewPlaylist component for the currentUser who's      session is currently running. */}
+
+            
+            {/* NEWALBUMLIST ROUTE */}
+            <Route path="/albumlist-index" render={(props) =>         <newAlbumlist {...props} currentUser =        {this.state.loggedInUser} /> } />
+            {/* above says, at this url, render props from the      NewAlbumlist component for the currentUser who's      session is currently running. */}
+
+
+
         </Switch>
 
       <PlaylistIndex />

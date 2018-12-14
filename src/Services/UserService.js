@@ -32,6 +32,7 @@ class UserService {
         return this.service.get('/loggedin')
         // why this route a get, not a post?
         // no object in 2nd arg here, why?
+        // because get route doesn't send data, post routes require an object because a post route sends something.
           .then(response => response.data)
     }
 
