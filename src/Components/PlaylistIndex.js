@@ -28,7 +28,7 @@ class PlaylistIndex extends Component {
 
     fetchPlaylists = () => {
         // function that can be called from other functions in the component.
-      Axios.get('http://localhost:5000/api/playlists')
+      Axios.get(`${process.env.REACT_APP_API_URL}/playlists`)
       .then((responseFromApi) => {
         // responseFromApi is the array of objects from  the Api.
 

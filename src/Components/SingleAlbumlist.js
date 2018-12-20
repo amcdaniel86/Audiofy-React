@@ -17,7 +17,7 @@ class SingleAlbumlist extends Component {
 
   componentWillMount() {
       const theID = this.props.match.params.id;
-      Axios.get('http://localhost:5000/api/albumlist-details/'+theID)
+      Axios.get(`${process.env.REACT_APP_API_URL}/albumlist-details/${theID}`)
       .then((albumlistIGetBackFromApi) => {
         // console.log('----------=-=-=-==-=-=-=-------', albumlistIGetBackFromApi) test
 
@@ -45,7 +45,7 @@ class SingleAlbumlist extends Component {
         editAlbumlist = (e) => {
           e.preventDefault();
           // above prevents refreshing, works way React supposed to work.
-          Axios.post      ('http://localhost:5000/api/albumlist-edit/'+ this.state.theActualAlbumlist._id,
+          Axios.post      (`${process.env.REACT_APP_API_URL}/albumlist-edit/${ this.state.theActualAlbumlist._id}`,
           // grabs the id of the current Playlist that we are looking at, at this point in time in the app flow.
           {theName: this.state.nameInput, theTime: this.state.timeInput})
           // including .state means we are able to change the default state of the component, thus after editing is complete.. we need to end the process by returning the state, below with setState, back to editing: false, so the form goes away and the user can continue using the site.
@@ -110,7 +110,7 @@ class SingleAlbumlist extends Component {
 
 
             deletePlaylist = () => {
-              Axios.post('http://localhost:5000/api/albumlist-delete/'+ this.state.theActualAlbumlist._id, {})
+              Axios.post(`${process.env.REACT_APP_API_URL}/albumlist-delete/${ this.state.theActualAlbumlist._id}`, {})
               .then(() => {
                 this.props.history.push('/albumlist-index');
                 // redirect user over to albumlist-index after deletion occurs.

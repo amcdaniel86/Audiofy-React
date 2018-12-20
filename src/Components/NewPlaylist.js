@@ -32,7 +32,7 @@ class NewPlaylist extends Component {
         // ??not sure how to pull in req.body from api.
         
 // the below Axios.post route, you must include withCredentials as an object because the route we are posting to, uses req.user which by default is protected by express.
-      Axios.post('http://localhost:5000/api/playlists/add-new', {theName: newName, theTime: newTime }, {withCredentials: true})
+      Axios.post(`${process.env.REACT_APP_API_URL}/playlists/add-new`, {theName: newName, theTime: newTime }, {withCredentials: true})
       // ??not sure how to pull in req.body from api.
       // 2nd argument must be an object above, after the path address http...
       .then((responseFromOurApi) => {

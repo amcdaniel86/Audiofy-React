@@ -17,7 +17,7 @@ class SinglePlaylist extends Component {
 
   componentWillMount() {
       const theID = this.props.match.params.id;
-      Axios.get('http://localhost:5000/api/playlist-details/'+theID)
+      Axios.get(`${process.env.REACT_APP_API_URL}/playlist-details/${theID}`)
       .then((playlistIGetBackFromApi) => {
         // console.log('----------=-=-=-==-=-=-=-------', playlistIGetBackFromApi) test
 
@@ -45,7 +45,7 @@ class SinglePlaylist extends Component {
         editPlaylist = (e) => {
           e.preventDefault();
           // above prevents refreshing, works way React supposed to work.
-          Axios.post      ('http://localhost:5000/api/playlist-edit/'+ this.state.theActualPlaylist._id,
+          Axios.post(`${process.env.REACT_APP_API_URL}/playlist-edit/${ this.state.theActualPlaylist._id}`,
           // grabs the id of the current project that we are looking at, at this point in time in the app flow.
           {theName: this.state.nameInput, theTime: this.state.timeInput})
           // including .state means we are able to change the default state of the component, thus after editing is complete.. we need to end the process by returning the state, below with setState, back to editing: false, so the form goes away and the user can continue using the site.
@@ -100,7 +100,7 @@ class SinglePlaylist extends Component {
                     </span>
                   {/* we can put a small image of a pen here, and add an onClick function to the image.
                   the onClick function will change this.state.editing to true, so the form will then appear. */}
-                    <img onClick={this.toggleForm} className="pen-pic" src="https:aldksfjdaslkfj" />
+                    <img onClick={this.toggleForm} className="pen-pic" src="https:aldksfjdaslkfj" alt="pic" />
 
                   </div>
                 )
@@ -110,7 +110,7 @@ class SinglePlaylist extends Component {
 
 
             deleteProject = () => {
-              Axios.post('http://localhost:5000/api/playlist-delete/'+ this.state.theActualPlaylist._id, {})
+              Axios.post(`${process.env.REACT_APP_API_URL}/playlist-delete/${ this.state.theActualPlaylist._id}`, {})
               .then(() => {
                 this.props.history.push('/playlist-index');
                 // redirect user over to playlist-index after deletion occurs.

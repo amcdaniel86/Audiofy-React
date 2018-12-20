@@ -21,7 +21,7 @@ class Signup extends Component {
     
     handleFormSubmit = (e) => {
       e.preventDefault();
-      // you could do axios.post('http://localhost:5000/api/signup, {username: this.state.usernameInput, password: this.state.passwordInput}, {withCredentials: true})
+      // you could do axios.post(`${process.env.REACT_APP_API_URL}/signup`, {username: this.state.usernameInput, password: this.state.passwordInput}, {withCredentials: true})
       this.service.signup(this.state.usernameInput, this.state.passwordInput)
         .then((userFromDB) => {
             console.log('-=-=-=-=-=-=-=-=', userFromDB)

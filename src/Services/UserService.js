@@ -8,7 +8,7 @@ class UserService {
 
   constructor() {
     let service = Axios.create({
-      baseURL: 'http://localhost:5000/api',
+      baseURL: `${process.env.REACT_APP_API_URL}`,
       withCredentials: true
     })
     // Axios.create allows you to preconfigure the url, and headers, of any axios requests.

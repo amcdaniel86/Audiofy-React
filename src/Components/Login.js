@@ -22,7 +22,7 @@ class Login extends Component {
 
     handleFormSubmit = (e) => {
       e.preventDefault();
-      // you could do Axios.post('http://localhost:5000/api/login, {username: this.state.usernameInput, password: this.state.passwordInput}, {withCredentials: true})
+      // you could do Axios.post(`${process.env.REACT_APP_API_URL}/login`, {username: this.state.usernameInput, password: this.state.passwordInput}, {withCredentials: true})
       this.loginUserService.login(this.state.usernameInput, this.state.passwordInput)
         .then((userFromDB) => {
           // here, we wait for the API to give us the user object back after logging in.

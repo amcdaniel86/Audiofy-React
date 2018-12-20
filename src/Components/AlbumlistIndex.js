@@ -28,7 +28,7 @@ class AlbumlistIndex extends Component {
 
     fetchAlbumlists = () => {
         // function that can be called from other functions in the component.
-      Axios.get('http://localhost:5000/api/albumlists')
+      Axios.get(`${process.env.REACT_APP_API_URL}/albumlists`)
       .then((responseFromApi) => {
         // responseFromApi is the array of objects from  the Api.
 
