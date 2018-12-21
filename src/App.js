@@ -84,15 +84,21 @@ class App extends Component {
   <div>
           {this.showUser()}
 {/* // this works above because showUser uses an arrow function. */}
-        <h1>The Index Main Page</h1>
 
         <nav class="nav-bar">
-          <Link to="/playlist-index">All Playlists</Link>
-          <Link to="/albumlist-index">All Albumlists</Link>
-          <Link to="/signup">Sign Up For Account</Link>
-          <Link to="/login">Login to Your Account</Link>
-          <button onClick = {this.logout} >Logout</button>
+          
+          <Link id="link" to="/playlist-index">Playlists</Link>
+          
+          <Link id="link" to="/albumlist-index">Albumlists</Link>
+          
+          <Link id="link" to="/signup">Sign Up Page</Link>
+          
+          <Link id="link" to="/login">Login to Account</Link>
         </nav>
+
+          <button onClick = {this.logout} >Logout</button>
+
+        <h1 class="main-title"> Audiofy </h1>
 
 {/* // if you need to pass props to a component you are rendering inside a route, you have to use render as opposed to component = {} */}
 {/* // in addition, if you do above, (using render), then you must pass in {...this.props} so you're able to use this.props.history, this.props.history, this.props.match.params and the other this.props information from the DOM. */}
@@ -141,7 +147,6 @@ class App extends Component {
             {/* NEWALBUMLIST ROUTE */}
             <Route path="/albumlist-index" render={(props) =>         <newAlbumlist {...props} currentUser =        {this.state.loggedInUser} /> } />
             {/* above says, at this url, render props from the      NewAlbumlist component for the currentUser who's      session is currently running. */}
-
 
 
         </Switch>

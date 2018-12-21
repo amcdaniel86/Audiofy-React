@@ -17,9 +17,9 @@ class SinglePlaylist extends Component {
 
   componentWillMount() {
       const theID = this.props.match.params.id;
-      Axios.get(`${process.env.REACT_APP_API_URL}/playlist-details/${theID}`)
+      Axios.get(`https://audiofy-project3am.herokuapp.com/api/playlist-details/${theID}`)
       .then((playlistIGetBackFromApi) => {
-        // console.log('----------=-=-=-==-=-=-=-------', playlistIGetBackFromApi) test
+         console.log('----------=-=-=-==-=-=-=-------', playlistIGetBackFromApi) 
 
         this.setState({theActualPlaylist: playlistIGetBackFromApi.data,
               nameInput: playlistIGetBackFromApi.data.name,
@@ -45,7 +45,7 @@ class SinglePlaylist extends Component {
         editPlaylist = (e) => {
           e.preventDefault();
           // above prevents refreshing, works way React supposed to work.
-          Axios.post(`${process.env.REACT_APP_API_URL}/playlist-edit/${ this.state.theActualPlaylist._id}`,
+          Axios.post(`https://audiofy-project3am.herokuapp.com/api/playlist-edit/${ this.state.theActualPlaylist._id}`,
           // grabs the id of the current project that we are looking at, at this point in time in the app flow.
           {theName: this.state.nameInput, theTime: this.state.timeInput})
           // including .state means we are able to change the default state of the component, thus after editing is complete.. we need to end the process by returning the state, below with setState, back to editing: false, so the form goes away and the user can continue using the site.
@@ -110,7 +110,7 @@ class SinglePlaylist extends Component {
 
 
             deleteProject = () => {
-              Axios.post(`${process.env.REACT_APP_API_URL}/playlist-delete/${ this.state.theActualPlaylist._id}`, {})
+              Axios.post(`https://audiofy-project3am.herokuapp.com/api/playlist-delete/${ this.state.theActualPlaylist._id}`, {})
               .then(() => {
                 this.props.history.push('/playlist-index');
                 // redirect user over to playlist-index after deletion occurs.

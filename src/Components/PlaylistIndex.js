@@ -28,7 +28,7 @@ class PlaylistIndex extends Component {
 
     fetchPlaylists = () => {
         // function that can be called from other functions in the component.
-      Axios.get(`${process.env.REACT_APP_API_URL}/playlists`)
+      Axios.get(`https://audiofy-project3am.herokuapp.com/api/playlists`)
       .then((responseFromApi) => {
         // responseFromApi is the array of objects from  the Api.
 

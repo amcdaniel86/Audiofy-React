@@ -7,8 +7,10 @@ class UserService {
 
 
   constructor() {
+    console.log(process.env)
     let service = Axios.create({
-      baseURL: `${process.env.REACT_APP_API_URL}`,
+      //baseURL: `${process.env.REACT_APP_API_URL}`,
+      baseURL: 'https://audiofy-project3am.herokuapp.com/api',
       withCredentials: true
     })
     // Axios.create allows you to preconfigure the url, and headers, of any axios requests.

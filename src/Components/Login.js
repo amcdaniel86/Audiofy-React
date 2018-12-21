@@ -50,12 +50,12 @@ class Login extends Component {
 
           <form onSubmit = {this.handleFormSubmit}>
 
-            <label>Username:</label>          
-            <input type="text" name="usernameInput" value={this.state.usernameInput} onChange={ e => this.handleChange(e)} />
+            <label class="username">Username:</label>          
+            <input class="username" type="text" name="usernameInput" value={this.state.usernameInput} onChange={ e => this.handleChange(e)} />
             
             
-            <label>Password:</label>          
-            <input name="passwordInput" value={this.state.passwordInput} onChange={ e => this.handleChange(e)} />
+            <label class="username">Password:</label>          
+            <input type="password" name="passwordInput" value={this.state.passwordInput} onChange={ e => this.handleChange(e)} />
 
             <input type="submit" value="Login" />
 

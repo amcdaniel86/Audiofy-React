@@ -51,7 +51,8 @@ class Signup extends Component {
               
               
               <label>Password:</label>
-              <input name="passwordInput" value={this.state.passwordInput} onChange={ e => this.handleChange(e)} />
+              <input name="passwordInput" 
+              type="password" value={this.state.passwordInput} onChange={ e => this.handleChange(e)} />
               {/* what happens here: in the render section, is where based on logic in top half of component, the component will then render html onto the page (DOM). here the password input box is filled from passwordInput from the state section. and when onChange runs, handleChange function runs. */}
             
               <input type="submit" value="Signup" />
